@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Muhammad Umair — Marketing & Client Onboarding Portfolio</title>
+
+  <meta
+    name="description"
+    content="Marketing, product onboarding, creative operations and SaaS content portfolio by Muhammad Umair."
+  />
+
+  <style>
+    /* =========================================================
+       BASE
+    ========================================================= */
+
+    :root {
+      --bg: #f5f5f7;
+      --bg-soft: rgba(255,255,255,.64);
+      --white: #ffffff;
+      --black: #101010;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0,0,0,.075);
+
+      --blue: #0071e3;
+      --cyan: #0a84ff;
+      --green: #30d158;
+      --orange: #ff9f0a;
+      --pink: #ff375f;
+      --purple: #af52de;
+
+      --shadow:
+        0 30px 70px rgba(0,0,0,.08),
+        0 3px 15px rgba(0,0,0,.04);
+
+      --radius-xl: 42px;
+      --radius-lg: 30px;
+      --radius-md: 22px;
+      --radius-sm: 16px;
+
+      --max-width: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 5%, rgba(0,113,227,.11), transparent 27%),
+        radial-gradient(circle at 93% 18%, rgba(175,82,222,.12), transparent 25%),
+        radial-gradient(circle at 72% 72%, rgba(48,209,88,.09), transparent 27%),
+        #f5f5f7;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        Inter,
+        Arial,
+        sans-serif;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .wrap {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.64);
+      backdrop-filter: blur(16px);
+
+      font-size: 13px;
+      font-weight: 700;
+      color: #4a4a4d;
+
+      box-shadow: 0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      margin: 14px 0 14px;
+      font-size: clamp(38px, 5vw, 68px);
+      letter-spacing: -.055em;
+      line-height: .98;
+    }
+
+    .section-heading p {
+      max-width: 720px;
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          90deg,
+          #0071e3,
+          #5e5ce6,
+          #af52de,
+          #ff375f
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .nav-holder {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .nav {
+      pointer-events: auto;
+
+      width: min(calc(100% - 30px), 1080px);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+
+      padding: 11px 13px 11px 20px;
+
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+
+      background: rgba(250,250,252,.68);
+
+      backdrop-filter:
+        blur(30px)
+        saturate(170%);
+
+      box-shadow:
+        0 16px 40px rgba(0,0,0,.08),
+        inset 0 1px rgba(255,255,255,.7);
+    }
+
+    .brand {
+      font-weight: 750;
+      letter-spacing: -.03em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .nav-links a {
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-cta,
+    .button-primary,
+    .button-light {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      border-radius: 999px;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+
+      background: #111;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+
+      padding: 145px 0 90px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      top: 8%;
+      left: 50%;
+
+      width: 720px;
+      height: 720px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        conic-gradient(
+          from 60deg,
+          rgba(0,113,227,.17),
+          rgba(175,82,222,.15),
+          rgba(255,55,95,.13),
+          rgba(48,209,88,.12),
+          rgba(0,113,227,.17)
+        );
+
+      filter: blur(75px);
+      opacity: .52;
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero h1 {
+      margin: 18px 0 24px;
+
+      font-size: clamp(60px, 8.4vw, 115px);
+      line-height: .84;
+      letter-spacing: -.072em;
+
+      max-width: 870px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.5;
+
+      color: var(--muted);
+    }
+
+    .hero-copy strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 34px;
+    }
+
+    .button-primary {
+      padding: 15px 24px;
+
+      background: var(--blue);
+      color: white;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 14px 35px rgba(0,113,227,.23);
+    }
+
+    .button-light {
+      padding: 15px 24px;
+
+      background: rgba(255,255,255,.64);
+
+      border: 1px solid rgba(255,255,255,.9);
+
+      backdrop-filter: blur(20px);
+
+      font-weight: 700;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.04);
+    }
+
+    .button-primary:hover,
+    .button-light:hover,
+    .nav-cta:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
+
+    .visual-stage {
+      position: relative;
+
+      height: 620px;
+
+      perspective: 1200px;
+    }
+
+    .glass-panel {
+      position: absolute;
+
+      border: 1px solid rgba(255,255,255,.72);
+
+      backdrop-filter:
+        blur(25px)
+        saturate(150%);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.78),
+          rgba(255,255,255,.37)
+        );
+
+      box-shadow:
+        0 35px 80px rgba(0,0,0,.13),
+        inset 0 1px rgba(255,255,255,.95);
+    }
+
+    .panel-main {
+      inset: 50px 20px 90px 40px;
+
+      border-radius: 48px;
+
+      padding: 34px;
+
+      transform: rotateY(-7deg) rotateX(4deg);
+    }
+
+    .fake-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 32px;
+    }
+
+    .traffic {
+      display: flex;
+      gap: 8px;
+    }
+
+    .traffic span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .traffic span:nth-child(1) {
+      background: #ff5f57;
+    }
+
+    .traffic span:nth-child(2) {
+      background: #febc2e;
+    }
+
+    .traffic span:nth-child(3) {
+      background: #28c840;
+    }
+
+    .mini-label {
+      font-size: 12px;
+      font-weight: 750;
+      color: var(--muted);
+    }
+
+    .main-icon {
+      width: 84px;
+      height: 84px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 27px;
+
+      font-size: 37px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #027aff,
+          #5e5ce6
+        );
+
+      color: white;
+
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.45),
+        0 20px 45px rgba(0,113,227,.28);
+    }
+
+    .panel-main h3 {
+      margin: 25px 0 12px;
+
+      font-size: 38px;
+      line-height: 1.03;
+      letter-spacing: -.045em;
+    }
+
+    .panel-main p {
+      font-size: 16px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .mini-dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+
+      margin-top: 27px;
+    }
+
+    .metric {
+      padding: 18px;
+
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 22px;
+
+      background: rgba(255,255,255,.6);
+    }
+
+    .metric-icon {
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+
+      font-size: 15px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .floating {
+      width: 150px;
+      height: 150px;
+
+      border-radius: 37px;
+
+      display: grid;
+      place-items: center;
+
+      font-size: 54px;
+    }
+
+    .float-one {
+      top: 5px;
+      right: -15px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.85),
+          rgba(225,240,255,.58)
+        );
+
+      transform: rotate(9deg);
+    }
+
+    .float-two {
+      bottom: 10px;
+      left: 0;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.9),
+          rgba(237,226,255,.55)
+        );
+
+      transform: rotate(-8deg);
+    }
+
+
+    /* =========================================================
+       ROLE CHIPS
+    ========================================================= */
+
+    .roles {
+      padding-bottom: 45px;
+    }
+
+    .role-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .role-chip {
+      padding: 11px 17px;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(0,0,0,.06);
+
+      background: rgba(255,255,255,.6);
+
+      backdrop-filter: blur(18px);
+
+      font-size: 14px;
+      font-weight: 700;
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.035);
+    }
+
+
+    /* =========================================================
+       FEATURED CASE STUDIES
+    ========================================================= */
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+    }
+
+    .case {
+      min-height: 530px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 34px;
+
+      border-radius: var(--radius-xl);
+
+      position: relative;
+      overflow: hidden;
+
+      border: 1px solid rgba(255,255,255,.82);
+
+      box-shadow: var(--shadow);
+
+      transition:
+        transform .4s cubic-bezier(.2,.7,.2,1),
+        box-shadow .4s ease;
+    }
+
+    .case:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 40px 90px rgba(0,0,0,.12);
+    }
+
+    .case-large {
+      grid-column: span 7;
+    }
+
+    .case-small {
+      grid-column: span 5;
+    }
+
+    .case:nth-child(3),
+    .case:nth-child(6) {
+      grid-column: span 5;
+    }
+
+    .case:nth-child(4),
+    .case:nth-child(5) {
+      grid-column: span 7;
+    }
+
+    .theme-blue {
+      background:
+        radial-gradient(circle at 85% 10%, rgba(10,132,255,.23), transparent 32%),
+        linear-gradient(145deg, #ffffff, #edf6ff);
+    }
+
+    .theme-purple {
+      background:
+        radial-gradient(circle at 88% 7%, rgba(175,82,222,.25), transparent 35%),
+        linear-gradient(145deg, #ffffff, #f6efff);
+    }
+
+    .theme-green {
+      background:
+        radial-gradient(circle at 88% 8%, rgba(48,209,88,.19), transparent 36%),
+        linear-gradient(145deg, #ffffff, #f0fff4);
+    }
+
+    .theme-orange {
+      background:
+        radial-gradient(circle at 88% 8%, rgba(255,159,10,.24), transparent 35%),
+        linear-gradient(145deg, #ffffff, #fff7e9);
+    }
+
+    .theme-pink {
+      background:
+        radial-gradient(circle at 88% 8%, rgba(255,55,95,.20), transparent 36%),
+        linear-gradient(145deg, #ffffff, #fff0f4);
+    }
+
+    .theme-dark {
+      color: white;
+
+      background:
+        radial-gradient(circle at 85% 15%, rgba(0,113,227,.4), transparent 31%),
+        radial-gradient(circle at 10% 95%, rgba(175,82,222,.28), transparent 30%),
+        #111114;
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+
+      align-items: flex-start;
+    }
+
+    .case-icon {
+      width: 68px;
+      height: 68px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 22px;
+
+      font-size: 30px;
+
+      background: rgba(255,255,255,.74);
+
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.9),
+        0 14px 30px rgba(0,0,0,.08);
+    }
+
+    .theme-dark .case-icon {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+
+    .case-category {
+      display: inline-flex;
+
+      padding: 7px 11px;
+
+      background: rgba(255,255,255,.55);
+      border-radius: 999px;
+
+      font-size: 11px;
+      font-weight: 750;
+
+      color: var(--muted);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-dark .case-category {
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.7);
+    }
+
+    .case h3 {
+      margin: 34px 0 12px;
+
+      max-width: 620px;
+
+      font-size: clamp(31px, 4vw, 48px);
+      letter-spacing: -.052em;
+      line-height: 1;
+    }
+
+    .case-desc {
+      max-width: 650px;
+
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .theme-dark .case-desc {
+      color: rgba(255,255,255,.62);
+    }
+
+    .case-details {
+      margin-top: auto;
+      padding-top: 38px;
+
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 8px 11px;
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,.67);
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      font-size: 11px;
+      font-weight: 700;
+      color: #626267;
+    }
+
+    .theme-dark .tag {
+      color: rgba(255,255,255,.73);
+
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.11);
+    }
+
+
+    /* =========================================================
+       PROJECT LIBRARY
+    ========================================================= */
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      margin-bottom: 26px;
+    }
+
+    .filter-button {
+      cursor: pointer;
+
+      border: 0;
+
+      padding: 10px 15px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.68);
+      color: #555;
+
+      font-weight: 700;
+      font-size: 13px;
+
+      transition: .25s ease;
+    }
+
+    .filter-button.active,
+    .filter-button:hover {
+      background: #111;
+      color: white;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 270px;
+
+      display: flex;
+      flex-direction: column;
+
+      padding: 25px;
+
+      border-radius: 28px;
+
+      background: rgba(255,255,255,.72);
+
+      border: 1px solid rgba(255,255,255,.8);
+
+      backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.055);
+
+      transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        opacity .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 30px 60px rgba(0,0,0,.09);
+    }
+
+    .project-logo {
+      width: 54px;
+      height: 54px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 17px;
+
+      font-weight: 800;
+      font-size: 17px;
+
+      color: white;
+
+      background:
+        linear-gradient(145deg, #0071e3, #5e5ce6);
+
+      box-shadow:
+        0 14px 28px rgba(0,113,227,.2);
+    }
+
+    .project-card h4 {
+      margin: 27px 0 8px;
+
+      font-size: 22px;
+      letter-spacing: -.025em;
+    }
+
+    .project-card p {
+      margin: 0;
+
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .project-type {
+      margin-top: auto;
+      padding-top: 20px;
+
+      font-size: 11px;
+      font-weight: 750;
+
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+
+    /* =========================================================
+       CAPABILITIES
+    ========================================================= */
+
+    .capabilities-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .sticky-copy {
+      position: sticky;
+      top: 130px;
+    }
+
+    .sticky-copy h2 {
+      margin: 14px 0 18px;
+
+      font-size: clamp(42px, 5vw, 70px);
+      line-height: .96;
+      letter-spacing: -.055em;
+    }
+
+    .sticky-copy p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .cap-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cap {
+      padding: 28px;
+
+      display: grid;
+      grid-template-columns: 65px 1fr;
+      gap: 20px;
+
+      border-radius: 28px;
+
+      border: 1px solid rgba(255,255,255,.82);
+
+      background: rgba(255,255,255,.7);
+
+      backdrop-filter: blur(20px);
+
+      box-shadow: 0 15px 35px rgba(0,0,0,.045);
+    }
+
+    .cap-icon {
+      width: 60px;
+      height: 60px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 19px;
+
+      background:
+        linear-gradient(145deg,#ffffff,#eef3ff);
+
+      box-shadow: inset 0 1px white;
+
+      font-size: 25px;
+    }
+
+    .cap h3 {
+      margin: 4px 0 7px;
+
+      font-size: 21px;
+      letter-spacing: -.025em;
+    }
+
+    .cap p {
+      margin: 0;
+
+      line-height: 1.55;
+
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .process-box {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 12px;
+
+      padding: 22px;
+
+      border-radius: 36px;
+
+      background: rgba(255,255,255,.6);
+      border: 1px solid rgba(255,255,255,.85);
+
+      backdrop-filter: blur(25px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .process-step {
+      min-height: 220px;
+
+      padding: 22px;
+
+      border-radius: 25px;
+
+      background: rgba(255,255,255,.7);
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      margin-bottom: 45px;
+
+      background: #111;
+      color: white;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .process-step h4 {
+      margin: 0 0 8px;
+
+      font-size: 18px;
+    }
+
+    .process-step p {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================================================
+       TOOLS
+    ========================================================= */
+
+    .tool-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tool {
+      padding: 15px 20px;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,.65);
+
+      backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255,255,255,.82);
+
+      box-shadow: 0 10px 25px rgba(0,0,0,.035);
+
+      font-size: 14px;
+      font-weight: 720;
+    }
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+      padding-bottom: 65px;
+    }
+
+    .cta-box {
+      min-height: 540px;
+
+      padding: 80px 40px;
+
+      display: grid;
+      place-items: center;
+      text-align: center;
+
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 52px;
+
+      color: white;
+
+      background:
+        radial-gradient(circle at 15% 15%, rgba(0,122,255,.55), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(175,82,222,.5), transparent 32%),
+        radial-gradient(circle at 50% 105%, rgba(48,209,88,.28), transparent 36%),
+        #101013;
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.2);
+    }
+
+    .cta-inner {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 24px;
+
+      font-size: clamp(47px,7vw,88px);
+      line-height: .91;
+      letter-spacing: -.065em;
+    }
+
+    .cta-box p {
+      max-width: 670px;
+
+      margin: auto;
+
+      color: rgba(255,255,255,.62);
+
+      font-size: 19px;
+      line-height: 1.55;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .cta-actions .button-light {
+      color: #111;
+      background: white;
+    }
+
+    .cta-actions .dark-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 15px 24px;
+
+      border-radius: 999px;
+
+      color: white;
+
+      border: 1px solid rgba(255,255,255,.2);
+
+      background: rgba(255,255,255,.08);
+
+      backdrop-filter: blur(15px);
+
+      font-weight: 700;
+
+      transition: transform .25s ease;
+    }
+
+    .cta-actions .dark-outline:hover {
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 0 0 45px;
+    }
+
+    .footer-inner {
+      padding-top: 24px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+
+      border-top: 1px solid var(--line);
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================================================
+       ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+
+      transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 980px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 150px;
+      }
+
+      .visual-stage {
+        height: 570px;
+      }
+
+      .case-large,
+      .case-small,
+      .case:nth-child(3),
+      .case:nth-child(4),
+      .case:nth-child(5),
+      .case:nth-child(6) {
+        grid-column: span 12;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .capabilities-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sticky-copy {
+        position: static;
+      }
+
+      .process-box {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 620px) {
+
+      .wrap {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav {
+        padding-left: 16px;
+      }
+
+      .nav-cta {
+        padding: 9px 13px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .visual-stage {
+        height: 520px;
+      }
+
+      .panel-main {
+        inset: 35px 8px 70px 8px;
+        padding: 26px;
+      }
+
+      .floating {
+        width: 105px;
+        height: 105px;
+
+        font-size: 37px;
+      }
+
+      .mini-dashboard {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cap {
+        grid-template-columns: 1fr;
+      }
+
+      .case {
+        min-height: 480px;
+        padding: 27px;
+      }
+
+      .cta-box {
+        min-height: 460px;
+        padding: 55px 25px;
+        border-radius: 36px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =======================================================
+       NAV
+  ======================================================== -->
+
+  <div class="nav-holder">
+    <nav class="nav">
+      <a class="brand" href="#top">MU.</a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#process">Process</a>
+      </div>
+
+      <a
+        class="nav-cta"
+        href="https://mba-studio.github.io/portfolio/"
+        target="_blank"
+      >
+        View portfolio ↗
+      </a>
+    </nav>
+  </div>
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <header class="hero" id="top">
+
+    <div class="wrap hero-grid">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          ● Riyadh · Marketing & Client Experience
+        </div>
+
+        <h1>
+          I turn products into
+          <span class="gradient-text">clear experiences.</span>
+        </h1>
+
+        <p class="hero-copy">
+          I work across
+          <strong>marketing, client onboarding, product communication
+          and creative operations</strong> —
+          translating complex services and software into campaigns,
+          workflows and content people can actually understand.
+        </p>
+
+        <div class="hero-actions">
+
+          <a class="button-primary" href="#work">
+            Explore selected work ↓
+          </a>
+
+          <a
+            class="button-light"
+            href="https://umairyaseenjutt.github.io/motiondesign/"
+            target="_blank"
+          >
+            Motion portfolio ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="visual-stage reveal">
+
+        <div class="glass-panel panel-main">
+
+          <div class="fake-toolbar">
+
+            <div class="traffic">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="mini-label">
+              PRODUCT EXPERIENCE
+            </div>
+
+          </div>
+
+
+          <div class="main-icon">
+            ✦
+          </div>
+
+          <h3>
+            Marketing meets onboarding.
+          </h3>
+
+          <p>
+            Product storytelling, customer education,
+            workflow design and creative execution —
+            connected into one customer experience.
+          </p>
+
+
+          <div class="mini-dashboard">
+
+            <div class="metric">
+
+              <div class="metric-icon">◎</div>
+
+              <strong>
+                Product Communication
+              </strong>
+
+              <span>
+                Demos · Tutorials · Campaign Assets
+              </span>
+
+            </div>
+
+
+            <div class="metric">
+
+              <div class="metric-icon">↗</div>
+
+              <strong>
+                Client Experience
+              </strong>
+
+              <span>
+                Onboarding · Coordination · Delivery
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="glass-panel floating float-one">
+          ◉
+        </div>
+
+        <div class="glass-panel floating float-two">
+          ✺
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =======================================================
+       ROLE FIT
+  ======================================================== -->
+
+  <section class="roles">
+
+    <div class="wrap role-strip reveal">
+
+      <div class="role-chip">Marketing Specialist</div>
+      <div class="role-chip">Client Onboarding</div>
+      <div class="role-chip">Product Marketing</div>
+      <div class="role-chip">Creative Operations</div>
+      <div class="role-chip">Project Coordination</div>
+      <div class="role-chip">SaaS Content</div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FEATURED WORK
+  ======================================================== -->
+
+  <section class="section" id="work">
+
+    <div class="wrap">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+          Selected case studies
+        </span>
+
+        <h2>
+          Projects built around
+          <span class="gradient-text">real customer journeys.</span>
+        </h2>
+
+        <p>
+          My work often sits between marketing, product,
+          clients and creative production — helping teams
+          explain what they offer, onboard customers and
+          coordinate execution.
+        </p>
+
+      </div>
+
+
+      <div class="case-grid">
+
+
+        <!-- CASE 1 -->
+
+        <article class="case case-large theme-blue reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ◉
+            </div>
+
+            <div class="case-category">
+              MARKETING OPERATIONS
+            </div>
+
+          </div>
+
+          <h3>
+            MBA Studio — Content & Client Operations
+          </h3>
+
+          <p class="case-desc">
+            Managed client-facing creative projects spanning
+            SaaS product demos, promotional content,
+            walkthroughs and digital campaigns.
+
+            The work included understanding client needs,
+            shaping proposals and scope, coordinating production,
+            communicating revisions and translating complex
+            products into clear visual communication.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">Client Discovery</span>
+            <span class="tag">Proposal Development</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Creative Coordination</span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CASE 2 -->
+
+        <article class="case case-small theme-purple reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ♡
+            </div>
+
+            <div class="case-category">
+              DIGITAL PRESENCE
+            </div>
+
+          </div>
+
+          <h3>
+            Awaaz Therapy
+          </h3>
+
+          <p class="case-desc">
+            Supported the digital presentation of a therapy
+            service by organizing its web presence and
+            communicating the service in a clear,
+            approachable customer-facing format.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">Website Experience</span>
+            <span class="tag">Service Messaging</span>
+            <span class="tag">Customer Journey</span>
+            <span class="tag">Digital Content</span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CASE 3 -->
+
+        <article class="case theme-green reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ▶
+            </div>
+
+            <div class="case-category">
+              PRODUCT ONBOARDING
+            </div>
+
+          </div>
+
+          <h3>
+            SaaS Demo & Tutorial Programs
+          </h3>
+
+          <p class="case-desc">
+            Created product communication and onboarding
+            content for software products including walkthroughs,
+            demos, tutorials and promotional videos.
+
+            The goal across projects was consistent:
+            reduce product complexity and help users understand
+            the product faster.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">Product Education</span>
+            <span class="tag">Screencasts</span>
+            <span class="tag">Tutorial Design</span>
+            <span class="tag">User Onboarding</span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CASE 4 -->
+
+        <article class="case theme-orange reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ⚡
+            </div>
+
+            <div class="case-category">
+              AUTOMATION
+            </div>
+
+          </div>
+
+          <h3>
+            Automated Candidate Onboarding Workflow
+          </h3>
+
+          <p class="case-desc">
+            Designed an n8n recruitment workflow connecting
+            application intake, resume extraction,
+            AI-assisted CV-to-job matching,
+            candidate evaluation and structured HR outputs.
+
+            The project demonstrated how onboarding and
+            operations can be redesigned using workflow automation.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">n8n</span>
+            <span class="tag">AI Workflows</span>
+            <span class="tag">Forms</span>
+            <span class="tag">Candidate Evaluation</span>
+            <span class="tag">Process Design</span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CASE 5 -->
+
+        <article class="case theme-pink reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ↗
+            </div>
+
+            <div class="case-category">
+              CLIENT EXPERIENCE
+            </div>
+
+          </div>
+
+          <h3>
+            Client Onboarding & Delivery
+          </h3>
+
+          <p class="case-desc">
+            Coordinated projects from initial requirements and
+            proposal discussion through asset collection,
+            production, review and delivery.
+
+            This required balancing customer expectations,
+            scope, timelines, creative feedback and
+            communication across multiple stakeholders.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">Client Communication</span>
+            <span class="tag">Requirements Gathering</span>
+            <span class="tag">Review Cycles</span>
+            <span class="tag">Delivery Coordination</span>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- CASE 6 -->
+
+        <article class="case theme-dark reveal">
+
+          <div class="case-top">
+
+            <div class="case-icon">
+              ✦
+            </div>
+
+            <div class="case-category">
+              PRODUCT MARKETING
+            </div>
+
+          </div>
+
+          <h3>
+            From feature to story.
+          </h3>
+
+          <p class="case-desc">
+            Across software projects, I translate
+            product capabilities into customer-facing stories —
+            deciding what needs to be explained,
+            how the workflow should be shown,
+            and how visual content can support marketing,
+            activation and adoption.
+          </p>
+
+          <div class="case-details">
+
+            <span class="tag">Messaging</span>
+            <span class="tag">Product Positioning</span>
+            <span class="tag">Visual Storytelling</span>
+            <span class="tag">Marketing Content</span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       PROJECT LIBRARY
+  ======================================================== -->
+
+  <section class="section" id="projects">
+
+    <div class="wrap">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+          Project library
+        </span>
+
+        <h2>
+          Products and brands
+          <span class="gradient-text">I've worked around.</span>
+        </h2>
+
+        <p>
+          A selection of software, digital and content projects
+          involving product explanation, onboarding,
+          marketing communication or creative delivery.
+        </p>
+
+      </div>
+
+
+      <div class="filter-bar reveal">
+
+        <button class="filter-button active" data-filter="all">
+          All
+        </button>
+
+        <button class="filter-button" data-filter="saas">
+          SaaS
+        </button>
+
+        <button class="filter-button" data-filter="onboarding">
+          Onboarding
+        </button>
+
+        <button class="filter-button" data-filter="marketing">
+          Marketing
+        </button>
+
+        <button class="filter-button" data-filter="automation">
+          Automation
+        </button>
+
+      </div>
+
+
+      <div class="project-grid" id="projectGrid">
+
+        <!-- generated by JavaScript -->
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CAPABILITIES
+  ======================================================== -->
+
+  <section class="section" id="capabilities">
+
+    <div class="wrap capabilities-layout">
+
+
+      <div class="sticky-copy reveal">
+
+        <span class="eyebrow">
+          What I bring
+        </span>
+
+        <h2>
+          More than
+          <span class="gradient-text">making content.</span>
+        </h2>
+
+        <p>
+          My strongest work happens when a role requires
+          someone who can understand the customer,
+          understand the product and coordinate the people
+          needed to bring both together.
+        </p>
+
+      </div>
+
+
+      <div class="cap-list">
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ◎
+          </div>
+
+          <div>
+
+            <h3>
+              Product & Customer Understanding
+            </h3>
+
+            <p>
+              Translate product capabilities, workflows
+              and business requirements into communication
+              users can understand.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ↗
+          </div>
+
+          <div>
+
+            <h3>
+              Client Onboarding
+            </h3>
+
+            <p>
+              Requirements gathering, expectation setting,
+              asset coordination, feedback management
+              and delivery communication.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ✦
+          </div>
+
+          <div>
+
+            <h3>
+              Marketing Communication
+            </h3>
+
+            <p>
+              Product messaging, campaign content,
+              promotional assets and customer-facing
+              digital communication.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ▣
+          </div>
+
+          <div>
+
+            <h3>
+              Creative Project Management
+            </h3>
+
+            <p>
+              Coordinate briefs, creative execution,
+              revisions, stakeholders, timelines and
+              final delivery.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ⚡
+          </div>
+
+          <div>
+
+            <h3>
+              AI & Workflow Automation
+            </h3>
+
+            <p>
+              Build practical workflows using automation
+              and AI to reduce repetitive work and create
+              better operational experiences.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cap reveal">
+
+          <div class="cap-icon">
+            ▶
+          </div>
+
+          <div>
+
+            <h3>
+              SaaS Education Content
+            </h3>
+
+            <p>
+              Product demos, tutorials, software walkthroughs,
+              motion graphics and customer training content.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       PROCESS
+  ======================================================== -->
+
+  <section class="section" id="process">
+
+    <div class="wrap">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+          How I work
+        </span>
+
+        <h2>
+          From complexity to
+          <span class="gradient-text">clarity.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="process-box reveal">
+
+
+        <div class="process-step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <h4>
+            Understand
+          </h4>
+
+          <p>
+            Product, audience, goals,
+            stakeholders and business context.
+          </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h4>
+            Structure
+          </h4>
+
+          <p>
+            Turn requirements into a clear
+            journey, brief and execution plan.
+          </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h4>
+            Communicate
+          </h4>
+
+          <p>
+            Align messaging, stakeholders
+            and creative direction.
+          </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+          <div class="step-number">
+            04
+          </div>
+
+          <h4>
+            Execute
+          </h4>
+
+          <p>
+            Coordinate content, tools,
+            creative work and review cycles.
+          </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+          <div class="step-number">
+            05
+          </div>
+
+          <h4>
+            Improve
+          </h4>
+
+          <p>
+            Review feedback and refine
+            the customer experience.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       TOOLS
+  ======================================================== -->
+
+  <section class="section">
+
+    <div class="wrap">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">
+          Tools & platforms
+        </span>
+
+        <h2>
+          Strategy × creative ×
+          <span class="gradient-text">automation.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="tool-cloud reveal">
+
+        <span class="tool">Camtasia</span>
+        <span class="tool">After Effects</span>
+        <span class="tool">Premiere Pro</span>
+        <span class="tool">OBS</span>
+        <span class="tool">Canva Pro</span>
+        <span class="tool">n8n</span>
+        <span class="tool">AI Automation</span>
+        <span class="tool">ElevenLabs</span>
+        <span class="tool">HeyGen</span>
+        <span class="tool">Synthesia</span>
+        <span class="tool">Descript</span>
+        <span class="tool">Google Workspace</span>
+        <span class="tool">CRM Workflows</span>
+        <span class="tool">HubSpot</span>
+        <span class="tool">Dynamics 365</span>
+        <span class="tool">Odoo</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CTA
+  ======================================================== -->
+
+  <section class="cta">
+
+    <div class="wrap">
+
+      <div class="cta-box reveal">
+
+        <div class="cta-inner">
+
+          <h2>
+            Building better
+            customer journeys.
+          </h2>
+
+          <p>
+            Open to opportunities in Riyadh across
+            marketing, product marketing,
+            client onboarding, creative operations
+            and project coordination.
+          </p>
+
+
+          <div class="cta-actions">
+
+            <a
+              class="button-light"
+              href="https://mba-studio.github.io/portfolio/"
+              target="_blank"
+            >
+              View complete portfolio ↗
+            </a>
+
+            <a
+              class="dark-outline"
+              href="https://umairyaseenjutt.github.io/motiondesign/"
+              target="_blank"
+            >
+              Motion design work ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="wrap footer-inner">
+
+      <span>
+        Muhammad Umair · Riyadh, Saudi Arabia
+      </span>
+
+      <span>
+        Marketing · Onboarding · Product · Creative Operations
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    /* =========================================================
+       PROJECT DATA
+    ========================================================= */
+
+    const projects = [
+
+      {
+        name: "Opius AI",
+        short: "OA",
+        category: ["saas", "onboarding"],
+        description:
+          "Product-focused content designed to make software features and workflows easier to understand.",
+        type: "SaaS · Product Communication"
+      },
+
+      {
+        name: "Blasty AI",
+        short: "BA",
+        category: ["saas", "marketing"],
+        description:
+          "SaaS product communication combining visual storytelling with software demonstration.",
+        type: "SaaS · Marketing Content"
+      },
+
+      {
+        name: "Blufire",
+        short: "BF",
+        category: ["saas", "marketing"],
+        description:
+          "Creative product content supporting clear communication of the platform and its offering.",
+        type: "Product Content"
+      },
+
+      {
+        name: "OPS",
+        short: "OP",
+        category: ["saas", "onboarding"],
+        description:
+          "Software-focused visual communication supporting product understanding and onboarding.",
+        type: "SaaS · Onboarding"
+      },
+
+      {
+        name: "Clinic HQ",
+        short: "CH",
+        category: ["saas", "onboarding"],
+        description:
+          "Product walkthrough communication created around a software workflow and customer use case.",
+        type: "Software Walkthrough"
+      },
+
+      {
+        name: "JoinJam",
+        short: "JJ",
+        category: ["saas", "marketing"],
+        description:
+          "Digital product storytelling designed around communicating the software experience.",
+        type: "Product Marketing"
+      },
+
+      {
+        name: "CMTrading",
+        short: "CM",
+        category: ["marketing"],
+        description:
+          "Customer-facing visual content developed within a structured creative production workflow.",
+        type: "Marketing Content"
+      },
+
+      {
+        name: "AES International",
+        short: "AI",
+        category: ["marketing"],
+        description:
+          "Professional digital communication delivered as part of a managed creative project.",
+        type: "Digital Communication"
+      },
+
+      {
+        name: "CoopTrack",
+        short: "CT",
+        category: ["saas", "onboarding"],
+        description:
+          "Software explanation and visual content built to make the product workflow easier to follow.",
+        type: "SaaS · Product Education"
+      },
+
+      {
+        name: "CloseTrace",
+        short: "CL",
+        category: ["saas", "onboarding"],
+        description:
+          "Product communication focused on presenting software functionality through a structured user journey.",
+        type: "Product Walkthrough"
+      },
+
+      {
+        name: "Lexicon",
+        short: "LX",
+        category: ["saas", "marketing"],
+        description:
+          "Visual product storytelling supporting clearer customer-facing communication.",
+        type: "SaaS Content"
+      },
+
+      {
+        name: "SafePass",
+        short: "SP",
+        category: ["saas", "onboarding"],
+        description:
+          "Software-focused content designed around explaining functionality and the user experience.",
+        type: "Onboarding Content"
+      },
+
+      {
+        name: "Quickdoors",
+        short: "QD",
+        category: ["saas", "marketing"],
+        description:
+          "Digital communication and product presentation developed through a managed creative workflow.",
+        type: "Product Marketing"
+      },
+
+      {
+        name: "SongwritersDB",
+        short: "SD",
+        category: ["saas", "onboarding"],
+        description:
+          "Structured product communication supporting understanding of a digital platform.",
+        type: "Product Education"
+      },
+
+      {
+        name: "SketchList 3D",
+        short: "3D",
+        category: ["saas", "onboarding"],
+        description:
+          "Software tutorial and product explanation content designed around a visual product workflow.",
+        type: "Software Training"
+      },
+
+      {
+        name: "Ustrn",
+        short: "US",
+        category: ["saas", "marketing"],
+        description:
+          "Customer-facing product content created as part of a broader creative delivery process.",
+        type: "SaaS · Content"
+      },
+
+      {
+        name: "Awaaz Therapy",
+        short: "AT",
+        category: ["marketing", "onboarding"],
+        description:
+          "Digital presence and customer-facing service communication for a therapy platform.",
+        type: "Digital Experience"
+      },
+
+      {
+        name: "HR Automation",
+        short: "AI",
+        category: ["automation", "onboarding"],
+        description:
+          "n8n workflow connecting candidate intake, document processing, AI evaluation and structured HR outputs.",
+        type: "Automation · Operations"
+      }
+
+    ];
+
+
+    const grid = document.getElementById("projectGrid");
+
+
+    function renderProjects(filter = "all") {
+
+      grid.innerHTML = "";
+
+      const filtered =
+        filter === "all"
+          ? projects
+          : projects.filter(project =>
+              project.category.includes(filter)
+            );
+
+
+      filtered.forEach(project => {
+
+        const card = document.createElement("article");
+
+        card.className = "project-card reveal visible";
+
+        card.innerHTML = `
+
+          <div class="project-logo">
+            ${project.short}
+          </div>
+
+          <h4>
+            ${project.name}
+          </h4>
+
+          <p>
+            ${project.description}
+          </p>
+
+          <div class="project-type">
+            ${project.type}
+          </div>
+
+        `;
+
+        grid.appendChild(card);
+
+      });
+
+    }
+
+
+    renderProjects();
+
+
+
+    /* =========================================================
+       FILTER
+    ========================================================= */
+
+    document
+      .querySelectorAll(".filter-button")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          document
+            .querySelectorAll(".filter-button")
+            .forEach(b => b.classList.remove("active"));
+
+          button.classList.add("active");
+
+          renderProjects(
+            button.dataset.filter
+          );
+
+        });
+
+      });
+
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if(entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+
+          });
+
+        },
+
+        {
+          threshold: .12
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element =>
+        observer.observe(element)
+      );
+
+
+
+    /* =========================================================
+       SUBTLE HERO PARALLAX
+    ========================================================= */
+
+    const stage =
+      document.querySelector(".visual-stage");
+
+    window.addEventListener("mousemove", e => {
+
+      if(window.innerWidth < 980) return;
+
+      const x =
+        (e.clientX / window.innerWidth - .5) * 10;
+
+      const y =
+        (e.clientY / window.innerHeight - .5) * 8;
+
+      stage.style.transform =
+        `translate3d(${x}px, ${y}px, 0)`;
+
+    });
+
+  </script>
+
+</body>
+</html>
